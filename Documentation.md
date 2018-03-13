@@ -1,5 +1,8 @@
 ## 1. Titlul proiectului
    ### To do
+## 1. Titlul proiectului: 
+### Lumea filmelor 
+
 ## 2. Componența echipei de implementare (evidențierea liderului)
    ### To do
 ## 3. Prezentarea temei alese + motivația alegerii
