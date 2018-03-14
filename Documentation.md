@@ -1,7 +1,10 @@
 ## 1. Titlul proiectului
    ### LumeaFilmelor
 ## 2. Componența echipei de implementare (evidențierea liderului)
-   ### To do
+   ### Grupa 1308B
+   ### Zavalichi Răzvan-Andrei (lider)
+   ### Nichita Narcis-Nicolae
+   ### Bernic Ermil
 ## 3. Prezentarea temei alese + motivația alegerii
    ### To do
 ## 4. Scurtă analiză a tipurilor de aplicații existente din perspectiva temei alese
