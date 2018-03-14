@@ -6,7 +6,7 @@
    ### Nichita Narcis-Nicolae
    ### Bernic Ermil
 ## 3. Prezentarea temei alese + motivația alegerii
-   ### To do
+   ### LumeaFilmelor este o aplicație ce oferă utilizatorilor posibilitatea de a vedea care sunt ultimele filme apărute și de a rezerva bilete la cinema pentru un anumit film. Am ales această temă datorită faptului că ne plac filmele și am dori să realizăm o aplicație mai prietenoasă pentru pasionații de filme.
 ## 4. Scurtă analiză a tipurilor de aplicații existente din perspectiva temei alese
    ### To do
 ## 5. Descriere generală a implementării (caracteristici așteptate de la aplicație)
