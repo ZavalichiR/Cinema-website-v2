@@ -38,7 +38,8 @@
 -   StackEdit
 
 ## 8. Diagrame UML de use-case + Referirea și descrierea în text a fiecărei figuri/diagrame
-   ### To do
+![Diagrama UML de use-case](Diagrame/use_case.jpg)
+   Diagrama use-case oferă o descriere generală a modului în care va fi utilizat sistemul, furnizează o privire de ansamblu a funcționalităților ce se doresc a fi oferite de sistem și arată cum interacționează sistemul cu utilizatorul.
 
 ## 9. Diagrame UML de information flow + Referirea și descrierea în text a fiecărei figuri/diagrame
    ### To do
