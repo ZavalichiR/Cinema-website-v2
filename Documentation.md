@@ -13,8 +13,12 @@
    ### To do
 ## 6. Resursele hardware/software utilizate
    ### To do
-## 7. Identificarea actorilor și ac componentelor principale
-   ### To do
+## 7. Identificarea actorilor și a componentelor principale
+   ### Actorii:
+ - Actorii acestui site sunt reprezentați de către orice utilizator care va accesa site-ul.
+   ### Componente:
+ - Aplicația **LumeaFilmelor** are ca și componente principale un _server de servicii web_, un _server web_ și un _server de baze de date_. O componentă separată va fi _aplicația mobile_.
+
 ## 8. Diagrame UML de use-case + Referirea și descrierea în text a fiecărei figuri/diagrame
    ### To do
 ## 9. Diagrame UML de information flow + Referirea și descrierea în text a fiecărei figuri/diagrame
