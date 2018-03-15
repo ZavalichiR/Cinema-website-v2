@@ -42,7 +42,9 @@
    ### To do
 
 ## 10. Diagrame UML de componente + Referirea și descrierea în text a fiecărei figuri/diagrame
-   ### To do
+  ![Diagrama UML de componente](Diagrame/UML_Componente.jpg)
+  Diagrama de componente prezintă componentele proiectului și dependențele dintre ele. Aplicația **LumeaFilmelor** are ca și componente principale un _server de servicii web_, un _server web_ și un _server de baze de date_. O componentă separată va fi _aplicația mobile_.
+
 
 ## 11. Diagrame UML de activitate + Referirea și descrierea în text a fiecărei figuri/diagrame
    ### To do
