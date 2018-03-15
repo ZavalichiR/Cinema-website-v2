@@ -13,7 +13,7 @@
 ## 4. Scurtă analiză a tipurilor de aplicații existente din perspectiva temei alese
    ### Principalele site-uri web care oferă unele din serviciile acestui proiect sunt:
 - Cinema City (www.cinemacity.ro);
-- Cinema Patria (www.patria.md);
+- Cinema Patria (www.patria.md); 
 
 ## 5. Descriere generală a implementării (caracteristici așteptate de la aplicație)
    ### Aplicația **LumeaFilmelor** oferă posibilitatea de a fi accesată oricărui utilizator, fără a fi nevoie de autentificare. Aceștia pot căuta filmul dorit și iși pot rezerva bilete. Fiecare film este prevăzut cu o scrută descriere și un trailer.
