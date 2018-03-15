@@ -12,7 +12,17 @@
 ## 5. Descriere generală a implementării (caracteristici așteptate de la aplicație)
    ### To do
 ## 6. Resursele hardware/software utilizate
-   ### To do
+   ### Resursele hardware și software utilizate pentru crearea aplicației sunt:
+
+-   Laptop/Desktop
+-   Eclipse Oxygen
+-   Server care folosește servicii web de tip REST
+-   Server web (Servlet)
+-   Server de baze de date (MySQL)
+-   GitHub
+-   GitHub Desktop
+-   Sublime 3
+-   StackEdit
 ## 7. Identificarea actorilor și ac componentelor principale
    ### To do
 ## 8. Diagrame UML de use-case + Referirea și descrierea în text a fiecărei figuri/diagrame
