@@ -8,9 +8,11 @@
 ## 3. Prezentarea temei alese + motivația alegerii
    ### LumeaFilmelor este o aplicație ce oferă utilizatorilor posibilitatea de a vedea care sunt ultimele filme apărute și de a rezerva bilete la cinema pentru un anumit film. Am ales această temă datorită faptului că ne plac filmele și am dori să realizăm o aplicație mai prietenoasă pentru pasionații de filme.
 ## 4. Scurtă analiză a tipurilor de aplicații existente din perspectiva temei alese
-   ### To do
+   ### Principalele site-uri web care oferă unele din serviciile acestui proiect sunt:
+- Cinema City (www.cinemacity.ro);
+- Cinema Patria (www.patria.md);
 ## 5. Descriere generală a implementării (caracteristici așteptate de la aplicație)
-   ### To do
+   ### Aplicația **LumeaFilmelor** oferă posibilitatea de a fi accesată oricărui utilizator, fără a fi nevoie de autentificare. Aceștia pot căuta filmul dorit și iși pot rezerva bilete. Fiecare film este prevăzut cu o scrută descriere și un trailer.
 ## 6. Resursele hardware/software utilizate
    ### To do
 ## 7. Identificarea actorilor și ac componentelor principale
