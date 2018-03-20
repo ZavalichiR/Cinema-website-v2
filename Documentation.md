@@ -44,6 +44,7 @@ Diagrama use-case oferă o descriere generală a modului în care va fi utilizat
 
 ## 9. Diagrame UML de information flow + Referirea și descrierea în text a fiecărei figuri/diagrame
    ![Diagrama UML de information flow](Diagrame/information_flow.JPG)
+   
    Diagrama information flow este o diagramă UML de comportament care prezintă schimbările de informație între entitățile sistemului la un nivel înalt de abstractizare.
 
 ## 10. Diagrame UML de componente + Referirea și descrierea în text a fiecărei figuri/diagrame
@@ -72,7 +73,8 @@ Atunci când un vizitator intră pe site acesta poate să acceseze fiecare pagin
 În urma selectării locului dorit pentru un anumit film utilizatorul poate rezerva bilet urmând ca acesta să fie redirecționat către pagina principală.
 
 ## 14. Diagrame ER pentru baza de date + Referirea și descrierea în text a fiecărei figuri/diagrame
-![Diagrama ER](Diagrame/Diagrama_ER.PNG)
+![Diagrama ER](Diagrame/UML_ER.jpg)
+
 O diagramă a relației entitate (ERD) prezintă relațiile dintre entitățile stocate într-o bază de date. O entitate în acest context este o componentă a datelor. Cu alte cuvinte, diagramele ER ilustrează structura logică a bazelor de date.
 În aplicația LumaFilmelor este implementată o bază de date cu patru tabele: utilizator, rezervare, filme, contact.
 Mai mulți utilizatori pot cauta mai multe filme. Un film poate avea mai multe rezervări. Mai mulți utilizatori se pot adresa catre site cu același formular de contact.
