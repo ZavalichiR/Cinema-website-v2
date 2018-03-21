@@ -34,8 +34,9 @@ Principalele site-uri web care oferă unele din serviciile acestui proiect sunt:
 
 ## 7. Identificarea actorilor și a componentelor principale
 
- - **Actorii** acestui site sunt reprezentați de către orice utilizator care va accesa site-ul.
-- Aplicația are ca și **componente** principale un _server de servicii web_, un _server web_ și un _server de baze de date_. O componentă separată va fi _aplicația mobile_.
+- **Actorii** acestui site sunt reprezentați de către orice utilizator care va accesa site-ul.
+- Componentele principale ale aplicației "LumeaFilmelor" sunt: _server web_, _server de servicii web_, și _server de baze de date_. Ca și prototip de viitor, vom concepe o _aplicație mobil_ pentru comoditatea utilizatorilor.
+
 
 ## 8. Diagrame UML de use-case + Referirea și descrierea în text a fiecărei figuri/diagrame
 ![Diagrama UML de use-case](Diagrame/use-case.JPG)
@@ -50,7 +51,7 @@ Diagrama use-case oferă o descriere generală a modului în care va fi utilizat
 ## 10. Diagrame UML de componente + Referirea și descrierea în text a fiecărei figuri/diagrame
 ![Diagrama UML de componente](Diagrame/UML_Componente.jpg)
 
-Diagrama de componente prezintă componentele proiectului și dependențele dintre ele. Aplicația **LumeaFilmelor** are ca și componente principale un _server de servicii web_, un _server web_ și un _server de baze de date_. O componentă separată va fi _aplicația mobile_.
+Diagrama de componente prezintă componentele aplicației și dependențele dintre ele. O componentă este o clasă care reprezintă o parte modulară a unui sistem cu conținut încapsulat. Aplicația **LumeaFilmelor** are ca și componente principale un _server de servicii web_, un _server web_ și un _server de baze de date_. O componentă separată va fi _aplicația mobile_. După cum se poate observa din Diagrama UML de componente am identificat 5 componente care sunt interconectate între ele prin conexiuni de dependență.
 
 
 ## 11. Diagrame UML de activitate + Referirea și descrierea în text a fiecărei figuri/diagrame
@@ -74,7 +75,13 @@ Atunci când un vizitator intră pe site acesta poate să acceseze fiecare pagin
 
 ## 14. Diagrame ER pentru baza de date + Referirea și descrierea în text a fiecărei figuri/diagrame
 ![Diagrama ER](Diagrame/UML_ER.jpg)
-
-O diagramă a relației entitate (ERD) prezintă relațiile dintre entitățile stocate într-o bază de date. O entitate în acest context este o componentă a datelor. Cu alte cuvinte, diagramele ER ilustrează structura logică a bazelor de date.
+Diagrama ER (Entitate-Relație) descrisă în ## Diagrama ER pentru baza de date  prezintă tabelele din baza de date și relațiile care se stabilesc între acestea.
+Pentru acest proiect se folosesc următoarele tabele:
+- Utilizator
+- Filme
+- Contact
+- Rezervare
 În aplicația LumaFilmelor este implementată o bază de date cu patru tabele: utilizator, rezervare, filme, contact.
 Mai mulți utilizatori pot cauta mai multe filme. Un film poate avea mai multe rezervări. Mai mulți utilizatori se pot adresa catre site cu același formular de contact.
+
+© 2018 LumeaFilmelor TEAM. All rights reserved.
