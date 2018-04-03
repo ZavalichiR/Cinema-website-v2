@@ -42,12 +42,13 @@ Principalele site-uri web care oferă unele din serviciile acestui proiect sunt:
 ![Diagrama UML de use-case](Diagrame/use-case.JPG)
 
 Diagrama use-case oferă o descriere generală a modului în care va fi utilizat sistemul, furnizează o privire de ansamblu a funcționalităților ce se doresc a fi oferite de sistem și arată cum interacționează sistemul cu utilizatorul.
+Utilizatorul are posibilitatea de a căuta filme, a vedea detaliile, poate vizualiza locurile de la cinema, selectează locurile disponibile și poate rezerva bilet.
 
 ## 9. Diagrame UML de information flow + Referirea și descrierea în text a fiecărei figuri/diagrame
    ![Diagrama UML de information flow](Diagrame/information_flow.JPG)
    
    Diagrama information flow este o diagramă UML de comportament care prezintă schimbările de informație între entitățile sistemului la un nivel înalt de abstractizare.
-
+   
 ## 10. Diagrame UML de componente + Referirea și descrierea în text a fiecărei figuri/diagrame
 ![Diagrama UML de componente](Diagrame/UML_Componente.jpg)
 
