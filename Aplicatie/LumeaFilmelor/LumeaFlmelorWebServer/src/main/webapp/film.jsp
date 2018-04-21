@@ -328,7 +328,7 @@
                                   </table>    
                                </div> 
                                   <!-- Buton pentru formular -->
-                                  <button class="continua" type="submit" onclick="document.getElementById('lightbox3').style.display='inline';">Continuă</button>
+                                  <button class="continua" type="submit" onclick="document.getElementById('lightbox3').style.display='inline';">ContinuÄ</button>
 
                                   <!-- Deschide formularul-->
                                   <div id="lightbox3" class="lightbox" style="display:none" >
@@ -338,7 +338,7 @@
                                            <p class="exit" onclick="document.getElementById('lightbox3').style.display='none';" style="cursor:pointer;">  </p>
                                             
                                             <div class="content2">  
-                                              <h4> Vă rugăm să completați câmpurile:</h4>
+                                              <h4> Vă rugăm să completați câmpurile:</h4>
                                                <div class="eroareVContact" id="eroareV" ></div>
                                               <form name="confirmare" action='api/sendInfo.php' onsubmit="return validare2()"method='post'>
                                                 <fieldset >
@@ -362,7 +362,7 @@
                                                     <a name="locuri" id="locuriSelectatef"></a>
                                                   </div>
                                                 </fieldset>
-                                              <button class="finalizeaza" type="submit" onclick="selecteaza()">Finalizează</button>
+                                              <button class="finalizeaza" type="submit" onclick="selecteaza()">FinalizeazÄ</button>
                                             </form>
                                             </div>
 
@@ -387,7 +387,7 @@
          <div class="right">
            <div class="footerlink">
              <p class="lf">Copyright &copy; 2017 <a href="#">Lumea Filmelor</a> - All Rights Reserved</p></br> 
-              <p class="lf"> <a> Administrator </a> <a href="https://www.facebook.com/Zava96"> Răzvan Z. </a ></p> 
+              <p class="lf"> <a> Administrator </a> <a href="https://www.facebook.com/Zava96"> RÄzvan Z. </a ></p> 
              <p><img id = "banner" src="images/banner.png" alt="Banner"/></p>
              <p class="rf">By <a href="https://www.facebook.com/Zava96" target="_blank">ZAVA</a></p>
              <div style="clear:both;"></div>
