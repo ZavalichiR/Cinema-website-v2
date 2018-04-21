@@ -8,13 +8,13 @@
           <h3>Date de <span>Contact</span></h3>
           <div class="address">
             <div class="fleft"><span>Zip Code:</span>700259<br />
-              <span>Țară:</span>România<br />
+              <span>Țară:</span>România<br />
               <span>Telefon:</span>0754 023 154<br />
               <span>Fax:</span>+354 5635610
             </div>
             <div class="extra-wrap">
-              <p style="font-size: 30;color:white;margin-bottom: -38px;">Informații utile:</p>
-              <p class="detalii"> Vă rugăm să ne trimiteți orice sugeție sau problemă în legătură cu site-ul nostru. Echipa noastră este disponibilă 24/24. Dacă aveți întrebări sau probleme urgente vă rugăm să ne contactați telefonic, în caz contrar puteți completa formularul de mai jos:</p>
+              <p style="font-size: 30;color:white;margin-bottom: -38px;">InformaÈii utile:</p>
+              <p class="detalii"> Vă rugăm să ne trimiteți orice sugestie sau problemă în legătură cu site-ul nostru. Echipa noastră este disponibilă 24/24. Dacă aveți întrebări sau probleme urgente vă rugăm să ne contactați telefonic, în caz contrar puteți completa formularul de mai jos:</p>
             </div>     
           </div>
         </div>
@@ -39,7 +39,7 @@
               <input type="emails" name="mail" placeholder="Ex: aa@aa.com"  value=""/>
             </div>
             <div class="field">
-              <label>Mesajul dumneavoastră:</label>
+              <label>Mesajul dumneavoastră:</label>
               <textarea cols="1" rows="1" name="mesaj"></textarea>
             </div>
           </fieldset>
