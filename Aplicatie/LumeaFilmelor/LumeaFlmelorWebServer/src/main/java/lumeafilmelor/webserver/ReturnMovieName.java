@@ -54,7 +54,7 @@ public class ReturnMovieName extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		
 		String partialName = request.getParameter("str");
-		String data = partialName;
+		String data = "";
 		PrintWriter pw = response.getWriter();
 		//TO DO//
 		/*for()--parcurgi lista cu filme
@@ -65,7 +65,8 @@ public class ReturnMovieName extends HttpServlet {
 		*/
 		
 		//Cautare in baza de date a filmelor care contin cifrele din variabila partialName
-		pw.append("<a class='selectFilm'  method='get' href='film.php?idFilm=\"1' >").append("Film").append("</a><br/>");
+		//pw.append("<a class='selectFilm'  method='get' href='film.php?idFilm=\"1' >").append("Film").append("</a><br/>");
+		data="<a class='selectFilm'  method='get' href='film.php?idFilm=1' > NumeFilm </a><br/>";
 		response.getWriter().write(data);
        
         

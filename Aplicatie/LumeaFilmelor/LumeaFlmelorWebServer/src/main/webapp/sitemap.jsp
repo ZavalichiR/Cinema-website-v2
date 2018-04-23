@@ -1,4 +1,4 @@
- 
+ <%@ page contentType="text/html; charset=UTF-8" %>
 <div id="content">
   <div class="line-hor"></div>
   <div class="box">

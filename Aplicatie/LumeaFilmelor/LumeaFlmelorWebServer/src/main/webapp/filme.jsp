@@ -1,6 +1,5 @@
-<?php
-  session_start();
-?>
+<%@ page contentType="text/html; charset=UTF-8" %>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
  <link href="css/slideshow.css" rel="stylesheet" type="text/css" />
 <style>
@@ -11,8 +10,8 @@
   <div class="box">
         <div class="inner">
           <h3>Filmele <span>Noastre</span></h3>
-          <p class="detalii" >&emsp;"Trăim o viață și nu ni se întâmplă să avem nici cinci minute de comunicare atât de puternică, atât de adevărată, ca aceea prilejuită de un spectacol de teatru sau de un film" așa că echipa <b>Lumea Filmelor</b> face tot posibilul să aducă cele mai bune filme de pe piață.</p>
-          <p class="detalii" >&emsp;În continuare vă vom prezenta o listă cu cele mai bune filme. <b>Vizionare plăcută!</b></p>
+          <p class="detalii" >&emsp;"Trăim o viață și nu ni se întâmplă să avem nici cinci minute de comunicare atât de puternică, atât de adevărată, ca aceea prilejuită de un spectacol de teatru sau de un film" așa că echipa <b>Lumea Filmelor</b> face tot posibilul să aducă cele mai bune filme de pe piață.</p>
+          <p class="detalii" >&emsp;În continuare vă vom prezenta o listă cu cele mai bune filme. <b>Vizionare plăcută!</b></p>
         </div>
       </div>
     <div class="box2">  

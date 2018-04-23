@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
 <?php
   session_start();
 ?>
@@ -24,7 +25,7 @@
     <!-- menu bar -->
         <div class="row-2" id="myDIV">
           <ul>
-            <li><a href="index.php" class="btn">Acasă</a></li>
+            <li><a href="index.html" class="btn">Acasă</a></li>
           </ul>
         </div> 
       </div>
