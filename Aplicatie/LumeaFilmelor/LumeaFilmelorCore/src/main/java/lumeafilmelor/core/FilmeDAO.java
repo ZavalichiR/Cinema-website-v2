@@ -9,7 +9,7 @@ public interface FilmeDAO {
 
 	List<Filme> getFilm() throws SQLException;
 
-    Filme getFilm(Integer filmId) throws SQLException;
+    Filme getFilmById(Integer filmId) throws SQLException;
 
     /**
      * 

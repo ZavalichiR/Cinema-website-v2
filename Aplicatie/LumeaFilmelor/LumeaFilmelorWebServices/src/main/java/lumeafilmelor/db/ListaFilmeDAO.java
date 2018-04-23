@@ -100,7 +100,7 @@ public class ListaFilmeDAO implements FilmeDAO{
 		 * @see lumeafilmelor.core.FilmeDAO#findFilmById(java.lang.String)
 		 */
 		@Override
-		public Filme getFilm(Integer filmId) throws SQLException{
+		public Filme getFilmById(Integer filmId) throws SQLException{
 			List<Filme> filme  = Collections.synchronizedList(new ArrayList<>());
 			resSet = statmt.executeQuery("SELECT * FROM Filme" );
 
