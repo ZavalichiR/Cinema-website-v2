@@ -49,6 +49,16 @@ var scaune_selectate=Array();
 	  xmlhttp.open("GET","../api/sugestii.php?q="+str,true);
 	  xmlhttp.send();
 }*/
+function afiseazaFilm(id) {
+	var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            var data = xhr.responseText;
+        }
+    }
+    xhr.open('GET', "Movie?id="+id, true);
+    xhr.send(null);
+}
 function afiseazaFilme()
 {
 	var xhr = new XMLHttpRequest();
@@ -344,7 +354,6 @@ function selecteaza(){
 
 // Pune locurile ocupate de catre alti utilizatori//
 function seteazaLocuriOcupate(){
-
 	var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {

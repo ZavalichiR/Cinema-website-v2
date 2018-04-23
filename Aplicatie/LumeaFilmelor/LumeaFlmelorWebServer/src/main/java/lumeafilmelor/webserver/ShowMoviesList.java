@@ -62,8 +62,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		ClientConfig config = new ClientConfig();
 		Client client = ClientBuilder.newClient(config);
 		WebTarget service = client.target(getBaseURI());
-		//Response responser = service.path("api").path("filme").path("1").request().accept(MediaType.APPLICATION_JSON).get(Response.class);
-		
+
 		Response responser = service.path("api").path("filme").request().accept(MediaType.APPLICATION_JSON).get(Response.class);		
 		String ListaFilme = responser.readEntity(String.class);
 		System.out.println(ListaFilme);

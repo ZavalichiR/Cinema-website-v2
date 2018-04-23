@@ -44,8 +44,8 @@ public class FilmeFunctii {
     @GET
     @Path("{filmId}")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public Filme getFilm(@PathParam("filmId") Integer filmId) throws SQLException {
-        return ListaFilmeDAO.instance().getFilm(filmId);
+    public Filme getFilmById(@PathParam("filmId") Integer filmId) throws SQLException {
+        return ListaFilmeDAO.instance().getFilmById(filmId);
     }
 
 }    

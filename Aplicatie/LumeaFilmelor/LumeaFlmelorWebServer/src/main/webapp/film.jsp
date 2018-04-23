@@ -1,7 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<?php
-  session_start();
-?>
+
 <!DOCTYPE html>
 <head>
   <title>Lumea Filmelor</title>
@@ -11,6 +9,10 @@
    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
 </head>
 <body onload="seteazaLocuriOcupate()"id="page1">
+	<%String idFilm=request.getParameter("idFilm");%>
+	<script>
+		afiseazaFilm('<%=idFilm%>');
+    </script>
     <div id="main">
       <div id="header">
         <div class="row-1">
@@ -34,50 +36,52 @@
       <div id="content">
         <div class="box">
               <div class="inner2">
+                <%/*
                 <?php
-                  $xmlDoc=new DOMDocument();
-                  $xmlDoc->load("xml/filme.xml");
-                  $element=$xmlDoc->getElementsByTagName('film');
-                  $idFilm=$_GET["idFilm"];
-                     
-                  if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['idFilm'])){
+                $xmlDoc=new DOMDocument();
+                $xmlDoc->load("xml/filme.xml");
+                $element=$xmlDoc->getElementsByTagName('film');
+                $idFilm=$_GET["idFilm"];
+                   
+                if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['idFilm'])){
+                        
+                  $movie_name="";
+                  for($i=0; $i<($element->length); $i++) {
                           
-                    $movie_name="";
-                    for($i=0; $i<($element->length); $i++) {
+                    $id=$element->item($i)->getElementsByTagName('id');
+                    $originalt=$element->item($i)->getElementsByTagName('originalt');
+                    $titlu=$element->item($i)->getElementsByTagName('title');
+                    $src=$element->item($i)->getElementsByTagName('src');
+                    $gen=$element->item($i)->getElementsByTagName('gen');
+                    $limba=$element->item($i)->getElementsByTagName('limba');
+                    $premiera=$element->item($i)->getElementsByTagName('premiera');
+                    $regizor=$element->item($i)->getElementsByTagName('regizor');
+                    $actori=$element->item($i)->getElementsByTagName('actori');
+                    $descriere=$element->item($i)->getElementsByTagName('descriere');
+                    $durata=$element->item($i)->getElementsByTagName('durata');
+                    $anul=$element->item($i)->getElementsByTagName('anul');
+                    $trailer=$element->item($i)->getElementsByTagName('trailer');
+
+
+                    if ($titlu->item(0)->nodeType==1) {
+                      if ($id->item(0)->childNodes->item(0)->nodeValue==$idFilm) {                 
+                                
+                        $movie_name=$titlu->item(0)->childNodes->item(0)->nodeValue;
+                        $movie_originaln=$originalt->item(0)->childNodes->item(0)->nodeValue;
+                        $movie_src=$src->item(0)->childNodes->item(0)->nodeValue;
+                        $movie_gen=$gen->item(0)->childNodes->item(0)->nodeValue;
+                        $movie_limba=$limba->item(0)->childNodes->item(0)->nodeValue;
+                        $movie_premiera=$premiera->item(0)->childNodes->item(0)->nodeValue;
+                        $movie_regizor=$regizor->item(0)->childNodes->item(0)->nodeValue;
+                        $movie_actori=$actori->item(0)->childNodes->item(0)->nodeValue;
+                        $movie_descriere=$descriere->item(0)->childNodes->item(0)->nodeValue;
+                        $movie_durata=$durata->item(0)->childNodes->item(0)->nodeValue;
+                        $movie_anul=$anul->item(0)->childNodes->item(0)->nodeValue;
+                        $movie_trailer=$trailer->item(0)->childNodes->item(0)->nodeValue;
+                        ?>
+                */%>
                             
-                      $id=$element->item($i)->getElementsByTagName('id');
-                      $originalt=$element->item($i)->getElementsByTagName('originalt');
-                      $titlu=$element->item($i)->getElementsByTagName('title');
-                      $src=$element->item($i)->getElementsByTagName('src');
-                      $gen=$element->item($i)->getElementsByTagName('gen');
-                      $limba=$element->item($i)->getElementsByTagName('limba');
-                      $premiera=$element->item($i)->getElementsByTagName('premiera');
-                      $regizor=$element->item($i)->getElementsByTagName('regizor');
-                      $actori=$element->item($i)->getElementsByTagName('actori');
-                      $descriere=$element->item($i)->getElementsByTagName('descriere');
-                      $durata=$element->item($i)->getElementsByTagName('durata');
-                      $anul=$element->item($i)->getElementsByTagName('anul');
-                      $trailer=$element->item($i)->getElementsByTagName('trailer');
-
-
-                      if ($titlu->item(0)->nodeType==1) {
-                        if ($id->item(0)->childNodes->item(0)->nodeValue==$idFilm) {                 
-                                  
-                          $movie_name=$titlu->item(0)->childNodes->item(0)->nodeValue;
-                          $movie_originaln=$originalt->item(0)->childNodes->item(0)->nodeValue;
-                          $movie_src=$src->item(0)->childNodes->item(0)->nodeValue;
-                          $movie_gen=$gen->item(0)->childNodes->item(0)->nodeValue;
-                          $movie_limba=$limba->item(0)->childNodes->item(0)->nodeValue;
-                          $movie_premiera=$premiera->item(0)->childNodes->item(0)->nodeValue;
-                          $movie_regizor=$regizor->item(0)->childNodes->item(0)->nodeValue;
-                          $movie_actori=$actori->item(0)->childNodes->item(0)->nodeValue;
-                          $movie_descriere=$descriere->item(0)->childNodes->item(0)->nodeValue;
-                          $movie_durata=$durata->item(0)->childNodes->item(0)->nodeValue;
-                          $movie_anul=$anul->item(0)->childNodes->item(0)->nodeValue;
-                          $movie_trailer=$trailer->item(0)->childNodes->item(0)->nodeValue;
-                          ?>
-                          
-                          <div class="img-box1 alt"> <img class="cursor" onclick="document.getElementById('lightbox').style.display='inline';" src="<?php echo $movie_src ?>" alt="Thor Ragnarok"">
+                          <div class="img-box1 alt"> <img class="cursor" onclick="document.getElementById('lightbox').style.display='inline';" src="<?php echo $movie_src ?>" alt="film">
                           <div class="movie-title">
                             <?php echo $movie_name ?></h3>
                             <hr></hr>
@@ -134,202 +138,203 @@
 
                                     <tr>
                                       <span id="rand1">1</span>
-                                      <?php
-                                        for($i=1;$i<=12;++$i)
+                                      <%
+                                      for(int i=1;i<=12;++i)
+                                      {
+                                        if(i==6)
                                         {
-                                          if($i==6)
-                                          {
-                                            ?>
+                                      %>
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                            <?php
-                                          }
-                                          ?>
-                                            <td><div class="casuta"><div onclick="selectat(this)" id="<?php echo $i;?>" class="loc-cinema"><span><?php echo $i?></span></div></div></td>
-                                          <?php
+                                      <%
                                         }
-                                      ?>
+                                      %>
+                                            <td><div class="casuta"><div onclick="selectat(this)" id="<%=i%>" class="loc-cinema"><span><%=i%></span></div></div></td>
+                                      <%
+                                      }
+                                       %>
                                       <td id="rand-end">1</td>
                                     </tr>
 
                                     <tr>
                                       <td id="rand-start">2</td>
-                                      <?php
-                                        for($i=13;$i<=24;++$i)
+                                      <%
+                                      for(int i=13;i<=24;++i)
+                                      {
+                                        if(i==18)
                                         {
-                                          if($i==18)
-                                          {
-                                            ?>
+                                      %>
                                             <td></td>
                                             <td></td>
-                                            <?php
-                                          }
-                                          ?>
-                                            <td><div class="casuta"><div onclick="selectat(this)" id="<?php echo $i;?>" class="loc-cinema"><span><?php echo ($i-12);?></span></div></div></td>
-                                          <?php
+                                      <%
                                         }
-                                      ?>
+                                       %>
+                                            <td><div class="casuta"><div onclick="selectat(this)" id="<%=i%>" class="loc-cinema"><span><%=i-12%></span></div></div></td>
+                                       <%
+                                      }
+                                       %>
+                                        
                                       <td id="rand-end">2</td>
                                     </tr>
 
                                     <tr>
                                       <td id="rand-start">3</td>
-                                      <?php
-                                        for($i=25;$i<=36;++$i)
+                                      <%
+                                        for(int i=25;i<=36;++i)
                                         {
-                                          if($i==30)
+                                          if(i==30)
                                           {
-                                            ?>
+                                        	  %>
                                             <td></td>
                                             <td></td>
-                                            <?php
+                                            <%
                                           }
-                                          ?>
-                                            <td><div class="casuta"><div onclick="selectat(this)" id="<?php echo $i;?>" class="loc-cinema"><span><?php echo ($i-24);?></span></div></div></td>
-                                          <?php
+                                          %>
+                                            <td><div class="casuta"><div onclick="selectat(this)" id="<%=i%>" class="loc-cinema"><span><%=i-24%></span></div></div></td>
+                                          <%
                                         }
-                                      ?>
+                                      %>
                                       <td id="rand-end">3</td>
                                     </tr>
 
                                     <tr>
                                       <td id="rand-start">4</td>
-                                      <?php
-                                        for($i=37;$i<=48;++$i)
+                                      <%
+                                        for(int i=37;i<=48;++i)
                                         {
-                                          if($i==42)
+                                          if(i==42)
                                           {
-                                            ?>
+                                        	  %>
                                             <td></td>
                                             <td></td>
-                                            <?php
+                                            <%
                                           }
-                                          ?>
-                                            <td><div class="casuta"><div onclick="selectat(this)" id="<?php echo $i;?>" class="loc-cinema"><span><?php echo ($i-36);?></span></div></div></td>
-                                          <?php
+                                          %>
+                                            <td><div class="casuta"><div onclick="selectat(this)" id="<%=i%>" class="loc-cinema"><span><%=i-36%></span></div></div></td>
+                                          <%
                                         }
-                                      ?>
+                                      %>
                                       <td id="rand-end">4</td>
                                     </tr>
 
                                    <tr>
                                       <td id="rand-start">5</td>
-                                      <?php
-                                        for($i=49;$i<=60;++$i)
+                                      <%
+                                        for(int i=49;i<=60;++i)
                                         {
-                                          if($i==54)
+                                          if(i==54)
                                           {
-                                            ?>
+                                        	  %>
                                             <td></td>
                                             <td></td>
-                                            <?php
+                                            <%
                                           }
-                                          ?>
-                                            <td><div class="casuta"><div onclick="selectat(this)" id="<?php echo $i;?>" class="loc-cinema"><span><?php echo ($i-48);?></span></div></div></td>
-                                          <?php
+                                          %>
+                                            <td><div class="casuta"><div onclick="selectat(this)" id="<%=i%>" class="loc-cinema"><span><%=i-48%></span></div></div></td>
+                                          <%
                                         }
-                                      ?>
+                                      %>
                                       <td id="rand-end">5</td>
                                     </tr>
 
                                     <tr>
                                       <td id="rand-start">6</td>
-                                      <?php
-                                        for($i=61;$i<=72;++$i)
+                                      <%
+                                        for(int i=61;i<=72;++i)
                                         {
-                                          if($i==66)
+                                          if(i==66)
                                           {
-                                            ?>
+                                        	  %>
                                             <td></td>
                                             <td></td>
-                                            <?php
+                                            <%
                                           }
-                                          ?>
-                                            <td><div class="casuta"><div onclick="selectat(this)" id="<?php echo $i;?>" class="loc-cinema"><span><?php echo ($i-60);?></span></div></div></td>
-                                          <?php
+                                          %>
+                                            <td><div class="casuta"><div onclick="selectat(this)" id="<%=i%>" class="loc-cinema"><span><%=i-60%></span></div></div></td>
+                                          <%
                                         }
-                                      ?>
+                                      %>
                                       <td id="rand-end">6</td>
                                     </tr>
 
                                     <tr>
                                       <td id="rand-start">7</td>
-                                      <?php
-                                        for($i=73;$i<=84;++$i)
+                                      <%
+                                        for(int i=73;i<=84;++i)
                                         {
-                                          if($i==78)
+                                          if(i==78)
                                           {
-                                            ?>
+                                        	  %>
                                             <td></td>
                                             <td></td>
-                                            <?php
+                                            <%
                                           }
-                                          ?>
-                                            <td><div class="casuta"><div onclick="selectat(this)" id="<?php echo $i;?>" class="loc-cinema"><span><?php echo ($i-72);?></span></div></div></td>
-                                          <?php
+                                          %>
+                                            <td><div class="casuta"><div onclick="selectat(this)" id="<%=i%>" class="loc-cinema"><span><%=i-72%></span></div></div></td>
+                                          <%
                                         }
-                                      ?>
+                                      %>
                                       <td id="rand-end">7</td>
                                     </tr>
 
                                     <tr>
                                       <td id="rand2-start">8</td>
-                                      <?php
-                                        for($i=85;$i<=97;++$i)
+                                      <%
+                                        for(int i=85;i<=97;++i)
                                         {
-                                          if($i==90)
+                                          if(i==90)
                                           {
-                                            ?>
+                                        	  %>
                                             <td></td>
                                             <td></td>
-                                            <?php
+                                            <%
                                           }
-                                          ?>
-                                            <td><div class="casuta"><div onclick="selectat(this)" id="<?php echo $i;?>" class="loc-cinema"><span><?php echo ($i-84);?></span></div></div></td>
-                                          <?php
+                                          %>
+                                            <td><div class="casuta"><div onclick="selectat(this)" id="<%=i%>" class="loc-cinema"><span><%=i-84%></span></div></div></td>
+                                          <%
                                         }
-                                      ?>
+                                      %>
                                       <td id="rand2-end">8</td>
                                     </tr>
 
                                     <tr>
                                       <td id="rand2-start">9</td>
-                                      <?php
-                                        for($i=98;$i<=110;++$i)
+                                      <%
+                                        for(int i=98;i<=110;++i)
                                         {
-                                          if($i==103)
+                                          if(i==103)
                                           {
-                                            ?>
+                                        	  %>
                                             <td></td>
                                             <td></td>
-                                            <?php
+                                            <%
                                           }
-                                          ?>
-                                            <td><div class="casuta"><div onclick="selectat(this)" id="<?php echo $i;?>" class="loc-cinema"><span><?php echo ($i-97);?></span></div></div></td>
-                                          <?php
+                                          %>
+                                            <td><div class="casuta"><div onclick="selectat(this)" id="<%=i%>" class="loc-cinema"><span><%=i-97%></span></div></div></td>
+                                          <%
                                         }
-                                      ?>
+                                      %>
                                       <td id="rand2-end">9</td>
                                     </tr>
 
                                     <tr>
                                       <td id="rand2-start">10</td>
-                                      <?php
-                                        for($i=111;$i<=125;++$i)
+                                      <%
+                                        for(int i=111;i<=125;++i)
                                         {
-                                          ?>
-                                            <td><div class="casuta"><div onclick="selectat(this)" id="<?php echo $i;?>" class="loc-cinema"><span><?php echo ($i-110);?></span></div></div></td>
-                                          <?php
+                                          %>
+                                            <td><div class="casuta"><div onclick="selectat(this)" id="<%=i%>" class="loc-cinema"><span><%=i-110%></span></div></div></td>
+                                          <%
                                         }
-                                      ?>
+                                      %>
                                       <td id="rand2-end">10<td>
                                     </tr>
                                     
                                   </table>    
                                </div> 
                                   <!-- Buton pentru formular -->
-                                  <button class="continua" type="submit" onclick="document.getElementById('lightbox3').style.display='inline';">ContinuÄ</button>
+                                  <button class="continua" type="submit" onclick="document.getElementById('lightbox3').style.display='inline';">Continuă</button>
 
                                   <!-- Deschide formularul-->
                                   <div id="lightbox3" class="lightbox" style="display:none" >
@@ -339,7 +344,7 @@
                                            <p class="exit" onclick="document.getElementById('lightbox3').style.display='none';" style="cursor:pointer;">  </p>
                                             
                                             <div class="content2">  
-                                              <h4> Vă rugăm să completați câmpurile:</h4>
+                                              <h4> Vă rugăm să completați câmpurile:</h4>
                                                <div class="eroareVContact" id="eroareV" ></div>
                                               <form name="confirmare" action='api/sendInfo.php' onsubmit="return validare2()"method='post'>
                                                 <fieldset >
@@ -363,7 +368,7 @@
                                                     <a name="locuri" id="locuriSelectatef"></a>
                                                   </div>
                                                 </fieldset>
-                                              <button class="finalizeaza" type="submit" onclick="selecteaza()">FinalizeazÄ</button>
+                                              <button class="finalizeaza" type="submit" onclick="selecteaza()">Finalizează</button>
                                             </form>
                                             </div>
 
@@ -388,7 +393,7 @@
          <div class="right">
            <div class="footerlink">
              <p class="lf">Copyright &copy; 2017 <a href="#">Lumea Filmelor</a> - All Rights Reserved</p></br> 
-              <p class="lf"> <a> Administrator </a> <a href="https://www.facebook.com/Zava96"> RÄzvan Z. </a ></p> 
+              <p class="lf"> <a> Administrator </a> <a href="https://www.facebook.com/Zava96"> Răzvan Z. </a ></p> 
              <p><img id = "banner" src="images/banner.png" alt="Banner"/></p>
              <p class="rf">By <a href="https://www.facebook.com/Zava96" target="_blank">ZAVA</a></p>
              <div style="clear:both;"></div>
