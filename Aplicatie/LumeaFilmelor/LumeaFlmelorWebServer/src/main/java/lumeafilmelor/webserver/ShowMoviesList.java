@@ -2,7 +2,12 @@ package lumeafilmelor.webserver;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Type;
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +25,10 @@ import org.glassfish.jersey.client.ClientConfig;
 //import java.util.Arrays;
 //import javax.json.JsonArray;
 //import javax.json.JsonObject;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import lumeafilmelor.core.Filme;
 
 /**
  * Servlet implementation class ShowMoviesList
@@ -48,7 +57,6 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
 		
-		String data="raspuns";
 		PrintWriter pw = response.getWriter();
 		
 		ClientConfig config = new ClientConfig();
@@ -56,19 +64,26 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		WebTarget service = client.target(getBaseURI());
 		//Response responser = service.path("api").path("filme").path("1").request().accept(MediaType.APPLICATION_JSON).get(Response.class);
 		
-		Response responser = service.path("api").path("filme").request().accept(MediaType.APPLICATION_JSON).get(Response.class);
+		Response responser = service.path("api").path("filme").request().accept(MediaType.APPLICATION_JSON).get(Response.class);		
+		String ListaFilme = responser.readEntity(String.class);
+		System.out.println(ListaFilme);
+
+		/*
+		 * Type type=new TypeToken<List<Filme>>() {}.getType();	
+	
+		Gson g = new Gson();
+		List<Filme> filme = g.fromJson(responser.readEntity(String.class), type);
+
+		
+		 for (Filme tab : filme) {
+	          System.out.println("Away Team:  " + tab.getTitlu());
+	          pw.append(tab.getTitlu());
+	      }
+		 */
+	
         pw.append("Listafilme </br>");
-        //TO DO//
-		/*for()--parcurgi lista cu filme
-		{
-				afisare film cu: pw.append(nume_film).append("<br/>");
-		}
-		*/
 		
-		//Cautare in baza de date a filmelor care contin cifrele din variabila partialName
-		
-		pw.append(  responser.toString()+"<br/>").append(responser.readEntity(String.class)).append("<br/>");
-		response.getWriter().write(data);
+		pw.append(ListaFilme).append("<br/>");
 		
         
 	}
