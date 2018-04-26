@@ -20,7 +20,7 @@
 					
 			<div class="sec2">
 				<h3>Bine ați venit în <b>Lumea</b> <span>Filmelor</span></h3>
-				<div class="img-box1"> <a href='film.jsp?idFilm=1'><img src="images/Filme/Dunkirk-page1.jpg" alt="Dunkirk" ></a>
+				<div class="img-box1"> <a href='Movie?idFilm=1'><img src="images/Filme/Dunkirk-page1.jpg" alt="Dunkirk" ></a>
 					<span class="titlu">Filmul Anului</span>
 					<div class="first"><p class="detalii">&emsp;Povestea filmului Dunkirk surprinde trupele britanice și ale aliaților înconjurate de inamici pe plaja franceză și forțate să facă față unui asalt aproape imposibil de rezistat.
 					Filmul reunește o distribuție impresionantă din care fac parte actorii Tom Hardy (Mad Max: Drumul furiei), Mark Rylance, Kenneth Branagh, Cillian Murphy și debutantul Fionn Whitehead. Filmul este produs de Christopher Nolan și Emma Thomas, iar Jake Myers este producător executiv.</p></div>

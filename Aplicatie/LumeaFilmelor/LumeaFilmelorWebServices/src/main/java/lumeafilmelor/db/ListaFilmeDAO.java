@@ -102,6 +102,7 @@ public class ListaFilmeDAO implements FilmeDAO{
 		@Override
 		public Filme getFilmById(Integer filmId) throws SQLException{
 			List<Filme> filme  = Collections.synchronizedList(new ArrayList<>());
+			statmt=conn.createStatement();
 			resSet = statmt.executeQuery("SELECT * FROM Filme" );
 
 			while(resSet.next())
