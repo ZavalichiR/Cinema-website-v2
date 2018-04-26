@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-
+<%@ page import="lumeafilmelor.core.Filme" %>
+<%//@ page session="true" %>
 <!DOCTYPE html>
 <head>
   <title>Lumea Filmelor</title>
@@ -10,8 +11,10 @@
 </head>
 <body onload="seteazaLocuriOcupate()"id="page1">
 	<%String idFilm=request.getParameter("idFilm");%>
+	
+	
 	<script>
-		afiseazaFilm('<%=idFilm%>');
+	
     </script>
     <div id="main">
       <div id="header">
@@ -36,79 +39,43 @@
       <div id="content">
         <div class="box">
               <div class="inner2">
-                <%/*
-                <?php
-                $xmlDoc=new DOMDocument();
-                $xmlDoc->load("xml/filme.xml");
-                $element=$xmlDoc->getElementsByTagName('film');
-                $idFilm=$_GET["idFilm"];
-                   
-                if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['idFilm'])){
-                        
-                  $movie_name="";
-                  for($i=0; $i<($element->length); $i++) {
-                          
-                    $id=$element->item($i)->getElementsByTagName('id');
-                    $originalt=$element->item($i)->getElementsByTagName('originalt');
-                    $titlu=$element->item($i)->getElementsByTagName('title');
-                    $src=$element->item($i)->getElementsByTagName('src');
-                    $gen=$element->item($i)->getElementsByTagName('gen');
-                    $limba=$element->item($i)->getElementsByTagName('limba');
-                    $premiera=$element->item($i)->getElementsByTagName('premiera');
-                    $regizor=$element->item($i)->getElementsByTagName('regizor');
-                    $actori=$element->item($i)->getElementsByTagName('actori');
-                    $descriere=$element->item($i)->getElementsByTagName('descriere');
-                    $durata=$element->item($i)->getElementsByTagName('durata');
-                    $anul=$element->item($i)->getElementsByTagName('anul');
-                    $trailer=$element->item($i)->getElementsByTagName('trailer');
 
-
-                    if ($titlu->item(0)->nodeType==1) {
-                      if ($id->item(0)->childNodes->item(0)->nodeValue==$idFilm) {                 
-                                
-                        $movie_name=$titlu->item(0)->childNodes->item(0)->nodeValue;
-                        $movie_originaln=$originalt->item(0)->childNodes->item(0)->nodeValue;
-                        $movie_src=$src->item(0)->childNodes->item(0)->nodeValue;
-                        $movie_gen=$gen->item(0)->childNodes->item(0)->nodeValue;
-                        $movie_limba=$limba->item(0)->childNodes->item(0)->nodeValue;
-                        $movie_premiera=$premiera->item(0)->childNodes->item(0)->nodeValue;
-                        $movie_regizor=$regizor->item(0)->childNodes->item(0)->nodeValue;
-                        $movie_actori=$actori->item(0)->childNodes->item(0)->nodeValue;
-                        $movie_descriere=$descriere->item(0)->childNodes->item(0)->nodeValue;
-                        $movie_durata=$durata->item(0)->childNodes->item(0)->nodeValue;
-                        $movie_anul=$anul->item(0)->childNodes->item(0)->nodeValue;
-                        $movie_trailer=$trailer->item(0)->childNodes->item(0)->nodeValue;
-                        ?>
-                */%>
-                            
-                          <div class="img-box1 alt"> <img class="cursor" onclick="document.getElementById('lightbox').style.display='inline';" src="<?php echo $movie_src ?>" alt="film">
+				<%
+					Filme film = (Filme)request.getAttribute("film");
+                    if(film!=null)
+                    	{
+                        	System.out.println("OK");
+                    	}                       
+                    else
+                    {
+                    	System.out.println("Atribut NULL");
+                    	out.print("Atribut NULL");
+                     }
+                 %>                     
+                          <div class="img-box1 alt"> <img class="cursor" onclick="document.getElementById('lightbox').style.display='inline';" src="<%=film.getImagine()%>" alt="<%=film.getTitlu()%>">
                           <div class="movie-title">
-                            <?php echo $movie_name ?></h3>
+                            <he>
+								<%=film.getTitlu() %>
+                            </he>
                             <hr></hr>
                           </div>
   
                             <div class="film-box">
                                     <ol>
                                       <button class="tiket" onclick="document.getElementById('lightbox2').style.display='inline';"></button>
-                                      <li><h5>Titlul original:<span><?php echo $movie_originaln ?></span></h5></li>
-                                      <li><h5>Gen:<span><?php echo $movie_gen ?></span></h5></li>
-                                      <li><h5>Durata (in min.):<span><?php echo $movie_durata ?></span></h5></li>
-                                      <li><h5>Limba:<span><?php echo $movie_limba ?></span></h5></li>
-                                      <li><h5>Premiera în  data de:<span><?php echo $movie_premiera ?></span></h5></li>
-                                      <li><h5>Regizor:<span><?php echo $movie_regizor ?></span></h5></li>
-                                      <li><h5>Actori:<span><?php echo $movie_actori ?></span></h5></li>
-                                      <li><h5>Anul:<span><?php echo $movie_anul ?></span></h5></li>
+                                      <li><h5>Titlul original:<span><%=film.getOriginalTitlu()%></span></h5></li>
+                                      <li><h5>Gen:<span><%=film.getGen() %></span></h5></li>
+                                      <li><h5>Durata (in min.):<span><%=film.getDurata() %></span></h5></li>
+                                      <li><h5>Limba:<span><%=film.getLimba() %></span></h5></li>
+                                      <li><h5>Premiera în  data de:<span><%=film.getPremiera() %></span></h5></li>
+                                      <li><h5>Regizor:<span><%=film.getRegizor() %></span></h5></li>
+                                      <li><h5>Actori:<span><%=film.getActori() %></span></h5></li>
+                                      <li><h5>Anul:<span><%=film.getAn() %></span></h5></li>
                                    </ol>
-                                   <div class="descriere" ><p>&emsp;<?php echo $movie_descriere ?></p></div>
+                                   <div class="descriere" ><p>&emsp;<%=film.getDescriere()%></p></div>
                                      
                             </div>
-                          </div>
-                          <?php
-                              }
-                            }
-                          }
-                        }
-                    ?> 
+                          </div> 
                   
                     <!-- TRailer-->
 
@@ -117,7 +84,7 @@
                           <td align="center">
                             <div  style="width:600px; background-color:white; border:5px solid black;">
                                <p class="exit" onclick="document.getElementById('lightbox').style.display='none';"style="cursor:pointer;"> </p>
-                               <div style="position:relative;height:0;padding-bottom:56.21%"><iframe src="<?php echo $movie_trailer ?>" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
+                               <div style="position:relative;height:0;padding-bottom:56.21%"><iframe src="<%=film.getTrailer() %>" style="position:absolute;width:100%;height:100%;left:0" width="641" height="360" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
                             </div>
                          </td>
                        </table>

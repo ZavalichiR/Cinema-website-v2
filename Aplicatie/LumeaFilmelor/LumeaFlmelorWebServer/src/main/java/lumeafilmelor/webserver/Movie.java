@@ -5,10 +5,12 @@ import java.io.PrintWriter;
 import java.net.URI;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
@@ -18,12 +20,12 @@ import javax.ws.rs.core.UriBuilder;
 
 import org.glassfish.jersey.client.ClientConfig;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import lumeafilmelor.core.Filme;
 /**
  * Servlet implementation class Movie
  */
 @WebServlet("/Movie")
+@MultipartConfig
 public class Movie extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -47,7 +49,7 @@ public class Movie extends HttpServlet {
 		
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
-		String filmId = request.getParameter("id");
+		String filmId = request.getParameter("idFilm");
 		
 		//Variabila primida din JS afiseazaFilm(...) 
 		PrintWriter pw = response.getWriter();
@@ -59,13 +61,32 @@ public class Movie extends HttpServlet {
 		Response responser = service.path("api").path("filme").path(filmId).request().accept(MediaType.APPLICATION_JSON).get(Response.class);		
 		
 		String SFilm = responser.readEntity(String.class);
+		//System.out.println(SFilm);
 		
 		Gson g = new Gson();
 		Filme film = g.fromJson(SFilm,Filme.class);
 		
 
-		//pw.append(SFilm);
-		System.out.println("Servlet:Movie\n"+"Titlu Film:"+film.getTitlu()+"\nString JSON:"+SFilm );
+		
+		System.out.println("Servlet pentru :Movie\n"+"Titlu Film:"+film.getTitlu()+"\n"+film.getImagine()+"\nString JSON:"+SFilm );
+		/// http://programmergate.com/pass-data-servlet-jsp/ ///
+		
+		/*HttpSession session=request.getSession();
+		session.setAttribute("filme",film.getTitlu());
+		request.getRequestDispatcher("film.jsp").forward(request, response);
+		*/
+		
+		// Passiong Object
+		
+		request.setAttribute("film",film);
+		Object o = request.getAttribute("film");
+        System.out.println("22222 "+film.getClass());
+        System.out.println("11111 "+o.getClass());
+        
+		request.getRequestDispatcher("film.jsp").forward(request, response);
+		
+		
+		
 	}
 
 	/**
