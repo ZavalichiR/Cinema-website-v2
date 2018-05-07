@@ -145,8 +145,12 @@ Mai mulți utilizatori pot cauta mai multe filme. Un film poate avea mai multe r
  --2
 
 - #### Nichita Narcis
- --1
- --2
+ --1 Analiza aplicației și descrierea implementării
+ --2 Diagrame UML de : use-case,information flow,activitate
+ --3 Populare BD
+ --4 Conectare la baza de date
+ --4 Slide Show Aplicație Desktop
+ --5 Afișare film căutat(site)
 
 - #### Bernic Ermil   
  --1
