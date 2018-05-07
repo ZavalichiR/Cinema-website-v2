@@ -154,7 +154,7 @@ Mai mulți utilizatori pot cauta mai multe filme. Un film poate avea mai multe r
 
 ### Aprecieri/Critici
 **Lider:** Colegii mei s-au descurcat bine și au rezolvat fiecare task la timp. În caz în care rezolvarea a fost greșită aceștia au intervenit repede cu modificări și au anunțat pe fiecare membru din echipă despre aceste lucruri.
-**Narcis:**
+**Narcis:** Liderul nostru Zavalichi Răzvan a distribuit task-urile echitabil și ne-a ajutat mereu atunci cand nu am știut cum să rezolvam unele task-uri.A fost cel mai bun lider pe care l-am fi putut avea ! 
 **Ermil:**
 
 ### Concluzii/Modalități de extindere
