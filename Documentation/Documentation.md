@@ -153,13 +153,21 @@ Mai mulți utilizatori pot cauta mai multe filme. Un film poate avea mai multe r
  --5 Afișare film căutat(site)
 
 - #### Bernic Ermil   
- --1
- --2
+ --1 Resurse utilizate
+ --2 Identificarea actorilor și a componentelor principale
+ --3 Diagrame UML de componente
+ --4 Diagrame UML de activitate
+ --5 Diagrame ER pentru baza de date
+ --6 Preluare răspuns (format JSON) de la WebServices
+ --7 Crează tabelele: ClientCinema și Contacte
+ --8 Salvare Opinie
+ --9 Salvare informații Client
+ --10 Adaugă Design responsive
 
 ### Aprecieri/Critici
 **Lider:** Colegii mei s-au descurcat bine și au rezolvat fiecare task la timp. În caz în care rezolvarea a fost greșită aceștia au intervenit repede cu modificări și au anunțat pe fiecare membru din echipă despre aceste lucruri.
 **Narcis:** Liderul nostru Zavalichi Răzvan a distribuit task-urile echitabil și ne-a ajutat mereu atunci cand nu am știut cum să rezolvam unele task-uri.A fost cel mai bun lider pe care l-am fi putut avea ! 
-**Ermil:**
+**Ermil:** 
 
 ### Concluzii/Modalități de extindere
 
