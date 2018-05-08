@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="lumeafilmelor.core.Filme" %>
-<%//@ page session="true" %>
+
 <!DOCTYPE html>
 <head>
   <title>Lumea Filmelor</title>
@@ -9,7 +9,20 @@
   <script src="js/tools.js" type="text/javascript"></script>
    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
 </head>
-<body onload="seteazaLocuriOcupate()"id="page1">
+<%
+	Filme film = (Filme)request.getAttribute("film");
+    if(film!=null)
+       	{
+           	System.out.println("OK");
+       	}                       
+    else
+       {
+       		System.out.println("Atribut NULL");
+            out.print("Atribut NULL");
+       }
+%>  
+                 
+<body onload="seteazaLocuriOcupate(<%=film.getId()%>)"id="page1">
 	<%String idFilm=request.getParameter("idFilm");%>
 	
 	
@@ -40,18 +53,7 @@
         <div class="box">
               <div class="inner2">
 
-				<%
-					Filme film = (Filme)request.getAttribute("film");
-                    if(film!=null)
-                    	{
-                        	System.out.println("OK");
-                    	}                       
-                    else
-                    {
-                    	System.out.println("Atribut NULL");
-                    	out.print("Atribut NULL");
-                     }
-                 %>                     
+				                   
                           <div class="img-box1 alt"> <img class="cursor" onclick="document.getElementById('lightbox').style.display='inline';" src="<%=film.getImagine()%>" alt="<%=film.getTitlu()%>">
                           <div class="movie-title">
                             <he>
@@ -313,33 +315,35 @@
                                             <div class="content2">  
                                               <h4> Vă rugăm să completați câmpurile:</h4>
                                                <div class="eroareVContact" id="eroareV" ></div>
-                                              <form name="confirmare" action='api/sendInfo.php' onsubmit="return validare2()"method='post'>
+                                              <form name="confirmare"  onsubmit="return validare2()"method='post'>
                                                 <fieldset >
                                                   <div class="nume">
                                                     <label style="color: #f1f1f1;" >Nume:</label>
-                                                    <input  type="text" name="nume" placeholder="Ex: Nume"/>
+                                                    <input  type="text"  name="nume" placeholder="Ex: Nume"/>
                                                   </div>
                                                   <div class="prenume">
                                                     <label style="color: #f1f1f1;">Prenume:</label>
-                                                    <input type="text" name="prenume" placeholder="Ex: Prenume"/>
+                                                    <input type="text"  name="prenume" placeholder="Ex: Prenume"/>
                                                   </div>
                                                   <div class="telefon">
                                                     <label style="color: #f1f1f1;">Telefon:</label>
-                                                    <input  type="text" name="telefon" placeholder="Ex: XXXXXXXXXX"/>
+                                                    <input  type="text"  name="telefon" placeholder="Ex: XXXXXXXXXX"/>
                                                   </div>
                                                   <div >
                                                     <input  type="hidden" id="bilete" name="bilete" value="">
-                                                  </div>
+                                                  
+                                                   </div>
                                                   <div class="bilete">
                                                     <label style="color: #f1f1f1;" >Bilete:</label>
                                                     <a name="locuri" id="locuriSelectatef"></a>
                                                   </div>
                                                 </fieldset>
-                                              <button class="finalizeaza" type="submit" onclick="selecteaza()">Finalizează</button>
+                                              <button class="finalizeaza" type="submit" onclick="selecteaza(<%=film.getId()%>)">Finalizează</button>
                                             </form>
                                             </div>
 
                                           </div>
+                                          
                                         </td>
                                       </table>>
                                     </div>

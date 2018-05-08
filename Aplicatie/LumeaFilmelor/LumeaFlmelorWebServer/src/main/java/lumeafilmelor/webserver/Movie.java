@@ -50,10 +50,7 @@ public class Movie extends HttpServlet {
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
 		String filmId = request.getParameter("idFilm");
-		
-		//Variabila primida din JS afiseazaFilm(...) 
-		PrintWriter pw = response.getWriter();
-		
+				
 		//Accesare Servicii Web
 		ClientConfig config = new ClientConfig();
 		Client client = ClientBuilder.newClient(config);
@@ -79,9 +76,8 @@ public class Movie extends HttpServlet {
 		// Passiong Object
 		
 		request.setAttribute("film",film);
-		Object o = request.getAttribute("film");
-        System.out.println("22222 "+film.getClass());
-        System.out.println("11111 "+o.getClass());
+        System.out.println("Movie:Servlet "+film.getClass());
+
         
 		request.getRequestDispatcher("film.jsp").forward(request, response);
 		

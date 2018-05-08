@@ -11,7 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import lumeafilmelor.core.Filme;
-
+import lumeafilmelor.db.ListaClientiCinemaDAO;
 import lumeafilmelor.db.ListaFilmeDAO;
 
 
@@ -47,5 +47,6 @@ public class FilmeFunctii {
     public Filme getFilmById(@PathParam("filmId") Integer filmId) throws SQLException {
         return ListaFilmeDAO.instance().getFilmById(filmId);
     }
+    
 
 }    

@@ -671,7 +671,7 @@ a {
 .movie-title {
 	font-size: 31px;
     line-height: 1.2em;
-    margin-bottom: -7px;
+    margin-bottom: -7px;;
     font-weight: normal;
     color: rgba(14, 123, 208, 0.79);
 }
@@ -754,11 +754,21 @@ a {
 	margin-bottom: 31px;
     margin-left: 332px;
 }
-.list-movies{
-	float: left;
-    margin-right: 264px;
-    margin-bottom: 31px;
-    margin-left: 86px;
+.list-movies1{
+	margin-right: 273px;
+    margin-bottom: 38px;
+    margin-left: 367px;
+}
+
+.list-movies2{
+	margin-right: 264px;
+    margin-bottom: 74px;
+    margin-left: 140px;
+}
+.list-movies3{
+	margin-bottom: 21px;
+    margin-left: 577px;
+    margin-top: -290px;
 }
 .list-movies img{
 	float:left;

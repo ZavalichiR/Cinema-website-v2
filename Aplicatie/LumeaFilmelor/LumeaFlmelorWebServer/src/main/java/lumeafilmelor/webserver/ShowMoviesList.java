@@ -2,11 +2,9 @@ package lumeafilmelor.webserver;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.lang.reflect.Type;
+
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,7 +25,6 @@ import org.glassfish.jersey.client.ClientConfig;
 //import javax.json.JsonObject;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import lumeafilmelor.core.Filme;
 
 /**
@@ -66,23 +63,14 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		Response responser = service.path("api").path("filme").request().accept(MediaType.APPLICATION_JSON).get(Response.class);		
 		String ListaFilme = responser.readEntity(String.class);
 		System.out.println(ListaFilme);
-
-		/*
-		 * Type type=new TypeToken<List<Filme>>() {}.getType();	
-	
+		
 		Gson g = new Gson();
-		List<Filme> filme = g.fromJson(responser.readEntity(String.class), type);
-
+		Filme[] filme = g.fromJson(ListaFilme,Filme[].class);	
 		
-		 for (Filme tab : filme) {
-	          System.out.println("Away Team:  " + tab.getTitlu());
-	          pw.append(tab.getTitlu());
-	      }
-		 */
-	
-        pw.append("Listafilme </br>");
-		
-		pw.append(ListaFilme).append("<br/>");
+		request.setAttribute("filme",filme);
+        System.out.println("ShowMoviesList:Servlet "+filme.getClass());
+  
+		request.getRequestDispatcher("filme.jsp").forward(request, response);
 		
         
 	}

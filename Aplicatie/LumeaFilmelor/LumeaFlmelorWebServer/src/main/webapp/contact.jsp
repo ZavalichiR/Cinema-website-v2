@@ -27,7 +27,7 @@
       <div class="content">  
         
         <h3>Formular de <span>Contact</span></h3>
-        <form name="contact" action='api/sendInfo.php' onsubmit="return validare()" method='post'>
+        <form name="contact" action='Contacts' onsubmit="return validare()" method='post'>
           <div class="eroareVContact" id="eroareV" ></div>
           <fieldset id="contacts-form">
             <div class="field">
