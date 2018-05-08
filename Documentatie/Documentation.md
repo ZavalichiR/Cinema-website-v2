@@ -121,7 +121,7 @@ Mai mulți utilizatori pot cauta mai multe filme. Un film poate avea mai multe r
 
 #####  Pentru etapa a treia noi vom face:
 - afisarea filmelor din baza de date;
--   introducerea locurilor ocupate in baza de date;
+- introducerea locurilor ocupate in baza de date;
 - afisarea locurilor ocupate din baza de date;
 - contact echipa;
 - realizarea aplicație Desktop;
@@ -137,47 +137,55 @@ Mai mulți utilizatori pot cauta mai multe filme. Un film poate avea mai multe r
 - trimiterea datelor de la un servlet la jsp
 - trimiterea datelor de la jsp la servlet
 - trimiterea și primirea datelor de la javacsript către servlet și JSP
-- 
+- crearea funcțiilor în java script pentru actualizarea locurilor ocupate
 
 ### Contribuții:
 - #### Zavalichi Răzvan-Andrei
- --1
- --2
+ -- 1.Creare structură proiect
+ -- 2.Realizarea unui schelet funcțional (1 JSP, 1 Servlet, 1 apel la serviciile web)
+ -- 3.Creare clasă pentru fiecare tabelă din baza de date
+ -- 4.Creare legături între servlet, jsp și serviciile web
+ -- 5.Creare legătură cu baza de date cu diferite metode
+ -- 6.Adăugarea metodelor GET, POST pentru serviciile web
+ -- 7.Creare servlet pentru fiecare pagină web
+ -- 8.Creare pagină de wiki
+ -- 9.Aplicația desktop în C#
+ -- 10.Funcționalități extra: afișare filme (în funcție de caracterele introduse), afișare locuri selectate de către alt utilizator, afișare o nouă sală de cinema pentru fiecare film în parte și actualizarea locurilor disponibile, generare ID scaun în funcție de numărul lui, creare SlideShow în aplicația desktop, validarea tuturor datelor introduse...
 
 - #### Nichita Narcis
- --1 Analiza aplicației și descrierea implementării
- --2 Diagrame UML de : use-case,information flow,activitate
- --3 Populare BD
- --4 Conectare la baza de date
- --4 Slide Show Aplicație Desktop
- --5 Afișare film căutat(site)
+ -- 1.Analiza aplicației și descrierea implementării
+ -- 2.Diagrame UML de : use-case,information flow,activitate
+ -- 3.Populare BD
+ -- 4.Conectare la baza de date
+ -- 5.Slide Show Aplicație Desktop
+ -- 6.Afișare film căutat(site)
 
 - #### Bernic Ermil   
- --1 Resurse utilizate
- --2 Identificarea actorilor și a componentelor principale
- --3 Diagrame UML de componente
- --4 Diagrame UML de activitate
- --5 Diagrame ER pentru baza de date
- --6 Preluare răspuns (format JSON) de la WebServices
- --7 Crează tabelele: ClientCinema și Contacte
- --8 Salvare Opinie
- --9 Salvare informații Client
- --10 Adaugă Design responsive
+ -- 1.Resurse utilizate
+ -- 2.Identificarea actorilor și a componentelor principale
+ -- 3.Diagrame UML de componente
+ -- 4.Diagrame UML de activitate
+ -- 5.Diagrame ER pentru baza de date
+ -- 6.Preluare răspuns (format JSON) de la WebServices
+ -- 7.Crează tabelele: ClientCinema și Contacte
+ -- 8.Salvare Opinie
+ -- 9.Salvare informații Client
+ -- 10.Adaugă Design responsive
 
 ### Aprecieri/Critici
 **Lider:** Colegii mei s-au descurcat bine și au rezolvat fiecare task la timp. În caz în care rezolvarea a fost greșită aceștia au intervenit repede cu modificări și au anunțat pe fiecare membru din echipă despre aceste lucruri.
 **Narcis:** Liderul nostru Zavalichi Răzvan a distribuit task-urile echitabil și ne-a ajutat mereu atunci cand nu am știut cum să rezolvam unele task-uri.A fost cel mai bun lider pe care l-am fi putut avea ! 
-**Ermil:** Atunci când există o echipă nu ar trebui să existe critici, ci doar neînțelegeri ce se rezolvă. Am făcut o echipă bună. Desigur, mulțumiri liderului pentru ca de fiecare dată a avut grijă să ne împartă task-urile proporțional. Totodată, la fiecare impediment întîlnit, ne-a ajutat și a fost foarte receptiv. Narcis, a fost un coleg de ajutor și am făcut o echipă bună toți 3. 
+**Ermil:** Atunci când există o echipă nu ar trebui să existe critici, ci doar neînțelegeri ce se rezolvă. Am făcut o echipă bună. Desigur, mulțumiri liderului pentru ca de fiecare dată a avut grijă să ne împartă task-urile proporțional. Totodată, la fiecare impediment întâlnit, ne-a ajutat și a fost foarte receptiv. Narcis, a fost un coleg de ajutor și am făcut o echipă bună toți 3. 
 
 ### Concluzii/Modalități de extindere
 
  - Cu ajutorul acestei aplicație orice utilizator/vizitator poate rezerva bilete online la Cinema.
  - Este diponibilă și versiunea Desktop.
  - Îmbunătățiri pentru aplicație:
- -- crearea unui tab disponibil pentru administratori
- -- administratorii pot adăuga/edita/șterge orice film doresc
- -- posibilitatea utilizatorilor de a viziona filmele online
- -- o interfață mai prietenoasă
+ -- Crearea unui tab disponibil pentru administratori
+ -- Administratorii pot adăuga/edita/șterge orice film doresc
+ -- Posibilitatea utilizatorilor de a viziona filmele online
+ -- O interfață mai prietenoasă
  
 
 ### Bibliografie
