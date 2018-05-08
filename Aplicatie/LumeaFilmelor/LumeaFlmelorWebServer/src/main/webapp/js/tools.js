@@ -28,27 +28,7 @@ function showSlides(n) {
 var locuri_selectate=Array();
 var scaune_selectate=Array();
 
-
-// Arata in timp real rezultatele cautarii  //
-/*function showResult(str) {
-	  if (str.length==0) { 
-	    document.getElementById("gasit").innerHTML="";
-	    document.getElementById("gasit").style.border="0px";
-	    return;
-	  }
-	  if (window.XMLHttpRequest) {
-	    xmlhttp=new XMLHttpRequest();
-	  } else {  
-	    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	  xmlhttp.onreadystatechange=function() {
-	    if (this.readyState==4 && this.status==200) {
-	      document.getElementById("gasit").innerHTML=this.responseText;
-	    }
-	  }
-	  xmlhttp.open("GET","../api/sugestii.php?q="+str,true);
-	  xmlhttp.send();
-}*/
+//Afiseaza filmul in functie de id
 function afiseazaFilm(id) {
 	var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
@@ -59,6 +39,8 @@ function afiseazaFilm(id) {
     xhr.open('GET', "Movie?id="+id, true);
     xhr.send(null);
 }
+
+//Afiseaza lista cu toate filmele
 function afiseazaFilme()
 {
 	var xhr = new XMLHttpRequest();
@@ -71,6 +53,8 @@ function afiseazaFilme()
     xhr.open('GET', "ShowMoviesList", true);
     xhr.send(null);
 }
+
+//Afiseaza filmele cautate
 function showResult(str) {
 	var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
@@ -82,6 +66,8 @@ function showResult(str) {
     xhr.open('GET', "ReturnMovieName?str="+str, true);
     xhr.send(null);
 }
+
+//Verificare input pentru contact Echipa
 function validare(){
 	var nume=document.forms["contact"]["nume"];
 	var email=document.forms["contact"]["mail"];
@@ -149,6 +135,7 @@ function validare(){
 	    return true;
 }
 
+// Verificare date contact pentru Client
 function validare2(){
 	var nume=document.forms["confirmare"]["nume"];
 	var prenume=document.forms["confirmare"]["prenume"];
@@ -185,6 +172,7 @@ function validare2(){
 			return false;
 	 
 	    } else if (illegalChars.test(nume.value)) {
+	    	
 	        nume.style.background = 'Yellow';
 	        nume.style.color = 'Black';
 	        error = "Numele conține caractere nepermise!\n";
@@ -195,6 +183,7 @@ function validare2(){
 	    } 
 	    else {
 	    	//Numele a fost validat
+	    	numeForm=nume.value;
 	        nume.style.background = 'White';
 	        nume.style.color = 'Black';
 
@@ -217,6 +206,7 @@ function validare2(){
 		    }
 		    else{
 			    	//Prenumele a fost validat
+		    	prenumeForm=prenume.value;
 		        nume.style.background = 'White';
 		        nume.style.color = 'Black';
 
@@ -237,9 +227,11 @@ function validare2(){
 					return false;
 			    }
 		    	else{
-		    		//Telefonul a fost validata
+		    		//Telefonul a fost validat
+		    		telefonForm=telefon.value;
 		    		telefon.style.background = 'White';
 		        	telefon.style.color = 'Black';
+		        	
 		    	}
 		    }
 	        
@@ -247,27 +239,6 @@ function validare2(){
 	    return true;
 	//}
 }
-
-// Converteste dintr-un array JAvascript intr-un array PHP
-function convert(JsArr){
-    var Php = '';
-    if (Array.isArray(JsArr)){  
-        Php += 'array(';
-        for (var i in JsArr){
-            Php += '\'' + i + '\' => ' + convert(JsArr[i]);
-            if (JsArr[i] != JsArr[Object.keys(JsArr)[Object.keys(JsArr).length-1]]){
-                Php += ', ';
-            }
-        }
-        Php += ')';
-        return Php;
-    }
-    else{
-        return '\'' + JsArr + '\'';
-    }
-}
-
-
 
 // Pune locurile selectate //
 function selectat(elem) {
@@ -327,9 +298,15 @@ function selectat(elem) {
 	document.getElementById("locuriSelectatef").innerHTML=scaune_selectate;
 }
 
-// trimite locurile selectate la PHP //
-function selecteaza(){
 
+// trimite locurile selectate și informații client la Servlet Bilete //
+function selecteaza(idFilm){
+	
+	var nume=document.forms["confirmare"]["nume"].value;
+	var prenume=document.forms["confirmare"]["prenume"].value;
+	var telefon=document.forms["confirmare"]["telefon"].value;
+	var id=idFilm;
+	
 	if (window.XMLHttpRequest){
 	    xmlhttp=new XMLHttpRequest();
 	}
@@ -339,36 +316,36 @@ function selecteaza(){
 
 	xmlhttp.onreadystatechange=function() {
 	    if (this.readyState==4 && this.status==200) {
-	      document.getElementById("raspunsPHP").innerHTML=this.responseText;
+	    	
 	    }
 	  }
-
-	JSON.stringify(locuri_selectate);
-	var locuri=convert(locuri_selectate);
-
-	xmlhttp.open("GET", "api/bilete.php?locuri="+locuri, true);
+	locuriS=locuri_selectate;
+	scauneS=scaune_selectate;
+	xmlhttp.open("POST", "Bilete?locuriS="+locuriS+"&scauneS="+scauneS+"&nume="+nume+"&prenume="+prenume+"&telefon="+telefon+"&id="+id, true);
+	
 	xmlhttp.send();
-	var f_loc = document.getElementById("bilete");
-	f_loc.value = JSON.stringify(scaune_selectate);
 }
 
 // Pune locurile ocupate de catre alti utilizatori//
-function seteazaLocuriOcupate(){
+function seteazaLocuriOcupate(idFilm){
 	var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        var obiect = JSON.parse(this.responseText);
-        console.log("Json parsed data is: " + JSON.stringify(obiect));
-        for (var i = 0; i < obiect.length; i++)
+        var locuri=this.responseText;
+        //alert(locuri);
+        console.log(locuri);
+        var locuriO=locuri.split(",");
+        console.log(locuriO);
+    	for (var i = 0; i < locuriO.length; i++)
 			{
-			  console.log(obiect[i].loc);
-			   var tag=document.getElementById(obiect[i].loc);
+			  console.log(locuriO[i]);
+			   var tag=document.getElementById(locuriO[i]);
 			   tag.className="loc-cinema-blocat"
 			}
        }
     };
 
-	xmlhttp.open("GET", "../json/bilete.json", true);
+	xmlhttp.open("GET", "Bilete?idFilm="+idFilm, true);
 	xmlhttp.send();
 
 }
@@ -383,14 +360,9 @@ function loadDoc(pagina) {
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 				document.getElementById("continut").innerHTML = xmlhttp.responseText;
 				
-				if (pagina == "filme.jsp") {
+				if (pagina == "ShowMoviesList") {
 					showSlides(1);
 				}
-				if(pagina =="sitemap.jsp")
-					{
-						afiseazaFilme();
-					}
-				
 			}
 		}
 	}

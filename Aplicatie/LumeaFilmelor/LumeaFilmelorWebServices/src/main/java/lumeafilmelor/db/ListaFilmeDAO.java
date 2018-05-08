@@ -33,10 +33,6 @@ public class ListaFilmeDAO implements FilmeDAO{
 			System.out.println("Totul e inchis");
 		}
 		
-		/*Pentru creare tabel, trebuie ceva de genul:
-		 * statmt = conn.createStatement();
-		 * statmt.execute("CREATE TABLE if not exists 'users' ('id' INTEGER PRIMARY KEY AUTOINCREMENT, 'name' text, 'phone' INT);");
-		 */
 		 
 		private ListaFilmeDAO() {
 			conn = null;
