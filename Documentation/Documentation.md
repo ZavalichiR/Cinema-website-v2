@@ -167,7 +167,7 @@ Mai mulți utilizatori pot cauta mai multe filme. Un film poate avea mai multe r
 ### Aprecieri/Critici
 **Lider:** Colegii mei s-au descurcat bine și au rezolvat fiecare task la timp. În caz în care rezolvarea a fost greșită aceștia au intervenit repede cu modificări și au anunțat pe fiecare membru din echipă despre aceste lucruri.
 **Narcis:** Liderul nostru Zavalichi Răzvan a distribuit task-urile echitabil și ne-a ajutat mereu atunci cand nu am știut cum să rezolvam unele task-uri.A fost cel mai bun lider pe care l-am fi putut avea ! 
-**Ermil:** 
+**Ermil:** Atunci când există o echipă nu ar trebui să existe critici, ci doar neînțelegeri ce se rezolvă. Am făcut o echipă bună. Desigur, mulțumiri liderului pentru ca de fiecare dată a avut grijă să ne împartă task-urile proporțional. Totodată, la fiecare impediment întîlnit, ne-a ajutat și a fost foarte receptiv. Narcis, a fost un coleg de ajutor și am făcut o echipă bună toți 3. 
 
 ### Concluzii/Modalități de extindere
 
