@@ -761,8 +761,8 @@ a {
 }
 
 .list-movies2{
-	margin-right: 264px;
-    margin-bottom: 74px;
+	    margin-right: 289px;
+    margin-bottom: 97px;
     margin-left: 140px;
 }
 .list-movies3{
@@ -801,6 +801,12 @@ a {
   transform: translateY(4px);
 }
 
+.wiki{
+	text-align: initial;
+    color: black;
+    background-color: blanchedalmond;
+    font-size: 16px;
+}
 .sala{
 	background-color: #eae8e8;
 	margin-top: -7px;

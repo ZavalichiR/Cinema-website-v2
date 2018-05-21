@@ -17,24 +17,23 @@
 			<div class="team"></br></br><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Echipa <span>Lumea Filmelor</span></h3></div>
 			
 				<div class="list-movies1"><img src="images/Echipa/Zava.jpg" alt="Autor" /></br>
-					Nume: Zavalichi Răzvan-Andrei</br>
-					Vârstă: 21 ani </br>
+					&emsp;&emsp;&emsp;&emsp;<b>LIDER</b></br>
+					Nume: Zavalichi Răzvan-Andrei</br>
+					Vârstă: 22 ani </br>
 					Profesie: student</br>
 					Altele: Autorul acestui site </br>
 				</div>
 				
-				<div class="list-movies2"><img src="images/Echipa/Zava.jpg" alt="Autor" /></br>
-					Nume: Zavalichi Răzvan-Andrei</br>
-					Vârstă: 21 ani </br>
+				<div class="list-movies2"><img src="images/Echipa/Narcis.jpg" alt="Narcis" /></br>
+					Nume: Nichita Narcis</br>
+					Vârstă: 22 ani </br>
 					Profesie: student</br>
-					Altele: Autorul acestui site </br>
 				</div>
 
-				<div class="list-movies3"><img src="images/Echipa/Zava.jpg" alt="Autor" /></br>
-					Nume: Zavalichi Răzvan-Andrei</br>
-					Vârstă: 21 ani </br>
+				<div class="list-movies3"><img src="images/Echipa/Ermil.jpg" alt="Ermil" /></br>
+					Nume: Bernic Ermil</br>
+					Vârstă: 22 ani </br>
 					Profesie: student</br>
-					Altele: Autorul acestui site </br>
 				</div>
 
 			</div>
