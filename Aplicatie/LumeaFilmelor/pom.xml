@@ -42,7 +42,7 @@
 	</dependencies>
 	
   <modules>
-  	<module>LumeaFilmelorClient</module>
+  	<!-- <module>LumeaFilmelorClient</module> -->
   	<module>LumeaFilmelorCore</module>
   	<module>LumeaFilmelorWebServices</module>
     <module>LumeaFilmelorWebServer</module>
